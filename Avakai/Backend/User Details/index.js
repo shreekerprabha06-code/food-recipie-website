@@ -1,0 +1,10 @@
+const express = require('express')
+const app = express()
+app.use(express.json())
+app.use('/register',require('./Routes/Register'))
+app.use('/fetch',require('./Routes/Fetch'))
+app.use('/update',require('./Routes/Update'))
+app.use('/delete',require('./Routes/Delete'))
+app.listen(5000,()=>{
+    console.log("server started")
+})
