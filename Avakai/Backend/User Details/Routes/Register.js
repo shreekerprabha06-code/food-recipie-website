@@ -4,7 +4,7 @@ const {MongoClient}  = require('mongodb');
 const bcrypt = require('bcrypt');
 
 router.post('/', (req, res) => {
-    const { Name, Email, Password  } = req.body;
+    const { Name, Email, Password ,Amount } = req.body;
     bcrypt.hash(Password, 10, (err, hashedPassword) => {
         if (err) {
             return res.status(500).send("Error");
@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
         
     }
             const db = client.db('name');
-            db.collection('collection name').insertOne({ Name, Email, Password: hashedPassword }, (err, result) => {
+            db.collection('collection name').insertOne({ Name, Email, Password: hashedPassword ,Amount}, (err, result) => {
                 client.close(); 
                 if (err) {
                     return res.status(500).send("Error");
