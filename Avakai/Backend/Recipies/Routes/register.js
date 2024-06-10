@@ -15,10 +15,10 @@ const mongodb = require('mongodb').MongoClient
         "foodtype": req.body.foodtype,
         "likes": req.body.likes
     }
-    mongodb.connect('xxxxxxxxxxxxxxxxxxxxxx',(err,db)=>{
+    mongodb.connect('mongodb://localhost:27017/avakai',(err,db)=>{
         if(err) throw err;
         else{
-            db.collection('xxxxxxxxxx').insertOne(data,(err,result)=>{
+            db.collection('recipies').insertOne(data,(err,result)=>{
                 if(err) throw err
                 else{
                     res.status(201).send("successfully sent")

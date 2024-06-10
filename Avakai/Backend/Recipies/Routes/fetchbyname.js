@@ -3,11 +3,11 @@ const router = express.Router()
 const mongodb = require('mongodb').MongoClient
 
 
-    module.exports = router.get('/:name',(req,res)=>{
-        mongodb.connect('xxxxxxxxxxxxxxxxxxxxxxxxxx',(err,db)=>{
+    module.exports = router.get('/:title',(req,res)=>{
+        mongodb.connect('mongodb://localhost:27017/avakai',(err,db)=>{
             if(err) throw err;
             else{
-             db.collection('xxxxxxxxxxxx').findOne({"name":req.params.name},(err,record)=>{
+             db.collection('recipies').findOne({"title":req.params.title},(err,record)=>{
                 if(err) throw err;
                 else{
                     if(record){

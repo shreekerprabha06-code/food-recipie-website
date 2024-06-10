@@ -1,0 +1,161 @@
+
+.con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #dddddd, #f0f0f0);
+    padding: 20px;
+  }
+  
+  
+  .log {
+    background: linear-gradient(to bottom right, #767676af, #555);
+    border-radius: 10px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.805);
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  
+  .log h1 {
+    font-family: "Baloo Tammudu 2", system-ui;
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+    color: #fefdfd;
+    text-shadow: 2px 2px 5px rgb(36, 36, 36);
+  }
+  
+ 
+  .log input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: "East Sea Dokdo", sans-serif;
+    font-size: 1.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.394);
+    transition: transform 0.3s;
+  }
+  
+ .log p{
+  margin-top: 2px;
+ }
+  .log button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    font-family: "East Sea Dokdo", sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.394);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .log button:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    transform: scale(1.02);
+  }
+  
+
+  .log::before, .log::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+  
+  .log::before {
+    width: 100px;
+    height: 100px;
+    top: -20px;
+    left: -20px;
+  }
+  
+  .log::after {
+    width: 150px;
+    height: 150px;
+    bottom: -20px;
+    right: -20px;
+  }
+  .signuplink{
+    font-family: sans-serif;
+    color: #f7f5f5;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+  }
+  .signuplink a{
+    text-decoration: none;
+    color: rgb(25, 230, 223);
+  }
+  @media (max-width: 575.98px) {
+    .log {
+      padding: 20px;
+      box-shadow: none;
+    }
+    .log h1 {
+      font-size: 2rem;
+    }
+    .log input, .log button {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 576px){
+    .con{
+      margin-left: 0px;
+    }
+  }
+  @media  (max-width: 767.98px) {
+    .log {
+      padding: 30px;
+      padding-right: 45px;
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.394);
+    }
+    .log h1 {
+      font-size: 2.2rem;
+    }
+    .log input, .log button {
+      font-size: 1.6rem;
+    }
+  }
+  
+  
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .log {
+      padding: 40px;
+      box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.394);
+    }
+    .log h1 {
+      font-size: 2.5rem;
+    }
+    .log input, .log button {
+      font-size: 1.8rem;
+    }
+  }
+  
+  
+  @media (min-width: 992px) {
+    .log {
+      padding: 50px;
+      box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.394);
+    }
+    .log h1 {
+      font-size: 2.5rem;
+    }
+    .log input, .log button {
+      font-size: 1.8rem;
+    }
+  }
+  

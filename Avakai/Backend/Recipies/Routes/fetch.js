@@ -4,10 +4,10 @@ const mongodb = require('mongodb').MongoClient
 
 
     module.exports = router.get('/',(req,res)=>{
-        mongodb.connect('xxxxxxxxxxxxxxxxx',(err,db)=>{
+        mongodb.connect('mongodb://localhost:27017/avakai',(err,db)=>{
             if(err) throw err;
             else{
-             db.collection('xxxxxx').find().toArray((err,data)=>{
+             db.collection('recipies').find().toArray((err,data)=>{
                 if(err){
                     console.error("While fetching data from Collection ",err);
                 }else{

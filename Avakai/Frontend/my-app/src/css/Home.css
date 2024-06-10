@@ -1,0 +1,279 @@
+
+.home {
+  background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
+  min-height: 100vh;
+  padding-top: 75px; 
+  position: relative;
+  width: 100vw;
+}
+
+section {
+  padding: 40px 80px;
+  position: relative;
+}
+.home1 {
+  
+  display: flex;
+  align-items: center;
+}
+.lefhom1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+}
+
+.lefhom1::before, .lefhom1::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(135, 134, 134, 0.2);
+}
+
+.lefhom1::before {
+  width: 200px;
+  height: 200px;
+  top: -50px;
+  left: -50px;
+}
+
+.lefhom1::after {
+  width: 150px;
+  height: 150px;
+  bottom: -50px;
+  right: -50px;
+}
+
+.lefhom1 img {
+  width: 220px;
+  height: 200px;
+  border: 2px solid rgb(135, 134, 134);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.lefhom1 img:hover {
+  transform: scale(1.05) rotate(25deg);
+}
+
+.tit1 {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  
+}
+
+.tit1::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(135, 134, 134, 0.2);
+  top: -20px;
+  left: -50px;
+  transform: rotate(45deg);
+}
+
+.tit1 h1 {
+  font-family: "Baloo Tammudu 2", system-ui;
+  font-size: 3rem;
+  font-weight: 700;
+  color: black;
+  
+}
+
+.tit1 p {
+  font-family: "East Sea Dokdo", sans-serif;
+  font-size: 2.3rem;
+  color: black;
+}
+
+
+.home2, .home3 {
+  background: linear-gradient(to bottom right, #767676af, #555);   color: #f1efef; 
+  border-radius: 5px;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.805);
+  margin: 20px 0;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.home3{
+  background: linear-gradient(to bottom right, #696868af, #555); 
+
+}
+.home2::before, .home3::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1); 
+  top: -20px;
+  left: -20px;
+  border-radius: 50%;
+}
+
+.home2::after, .home3::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1); 
+  bottom: -20px;
+  right: -20px;
+  border-radius: 50%;
+}
+.home2 h2{
+  text-shadow: 2px 2px 5px rgb(36, 36, 36);
+  font-size: 2rem;
+  font-family: "East Sea Dokdo", sans-serif;
+  color: #fefdfd;
+  font-weight: 200;
+}
+.home2 h1 {
+  font-family: "Baloo Tammudu 2", system-ui;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgb(36, 36, 36);
+}
+
+ .home3 p {
+  font-family: "East Sea Dokdo", sans-serif;
+  font-size: 2rem;
+}
+
+.homerecipes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: -50px;
+  
+  
+}
+
+.mySwiper {
+  width: 100%;
+  transition: 0.3s;
+  
+  
+  
+}
+
+.mySwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "East Sea Dokdo", sans-serif;
+  font-size: 1.8rem;
+  background-color: #3d3c3c80; 
+  color: #fff; 
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.586);
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  flex-shrink: 0;
+  
+}
+
+.swiper1 {
+  overflow: hidden;
+  height: 400px;
+  transition: 0.3s;
+  padding-top: 10px;
+  
+  
+  
+}
+
+.swiper1 img:hover {
+  transform: scale(1.05);
+}
+
+.swiper1 img {
+  height: 80%;
+  width: 90%;
+  border-radius: 15px;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.586);
+  transition: 0.3s;
+}
+
+.home3 h1 {
+  font-family: "Baloo Tammudu 2", system-ui;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: start;
+  text-shadow: 2px 2px 5px rgb(36, 36, 36);
+}
+
+
+@media (min-width:375px)  and (max-width: 480px)  {
+  .home{
+    margin-left: 20px;
+   }
+}
+@media (max-width: 768px) {
+ 
+  section {
+    padding: 20px 40px;
+  }
+  .home1 {
+  
+    display: block
+   
+  }
+  .lefhom1 img {
+    width: 150px;
+    height: 150px;
+  }
+  .swiper1{
+    height: 300px;
+    padding-right: 150px;
+  }
+  
+  .homerecipes {
+    
+    margin-left: 0px;
+    
+}
+
+  .swiper1 img {
+    height: 80%;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.586);
+    transition: 0.3s;
+    margin-left: 40px;
+  }
+
+  
+}
+
+@media (max-width: 992px) {
+ 
+  section {
+    padding: 30px 60px;
+  }
+
+  .lefhom1 img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (min-width: 1200px) {
+ 
+  section {
+    padding: 40px 80px;
+  }
+
+  .lefhom1 img {
+    width: 220px;
+    height: 200px;
+  }
+}

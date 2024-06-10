@@ -5,10 +5,10 @@ const mongodb = require('mongodb').MongoClient
 
     module.exports = router.delete('/',(req,res)=>{
         const name = req.body.name
-        mongodb.connect('xxxxxxxxxxxxxxxxxxxxxxxxx',(err,db)=>{
+        mongodb.connect('mongodb://localhost:27017/avakai',(err,db)=>{
             if(err) throw err;
             else{
-             db.collection('xxxxxx').deleteOne({name:name},(err,record)=>{
+             db.collection('recipies').deleteOne({name:name},(err,record)=>{
                 if(err) throw err;
                 else{
                     if(record.deletedCount>0){

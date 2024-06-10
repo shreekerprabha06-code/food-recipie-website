@@ -1,26 +1,58 @@
-const express = require('express')
-const { link } = require('./Register')
-const app = express()
-const router = express.Router()
-const mongodb = require('mongodb').MongoClient
-module.exports = router.put('/',(req,res)=>{
-    const NAME = req.body.Name;
-    const data = req.body;
-    mongodb.connect(link,(err,db)=>{
-        if(err) throw err
-        else{
-            db.collection(collectionname).updateOne({Name: NAME}, {$set: data}, (err,record)=>{
-                if(err){
-                    console.log("while fetching data",err)
-                }else{
-                    if(record.modifiedCount > 0){
-                        res.status(200).send("updated")
-                    }else{
-                        res.status(404).send("user not found")
+const express = require('express');
+const router = express.Router();
+const { MongoClient } = require('mongodb');
+const bcrypt = require('bcrypt');
+
+router.put('/', (req, res) => {
+    const email = req.body.email;
+    const updateData = req.body; 
+
+   
+    delete updateData.email;
+
+    const updateDocument = (data) => {
+        MongoClient.connect('mongodb://localhost:27017/avakai', (err, client) => {
+            if (err) {
+                return res.status(500).send("Error connecting to database");
+            }
+
+            const db = client.db('avakai'); 
+
+            
+            db.collection('userdetails').updateOne(
+                { email: email },
+                { $set: data },
+                (err, record) => {
+                    client.close(); 
+                    if (err) {
+                        return res.status(500).send("Error updating data");
+                    }
+                    if (record.modifiedCount > 0) {
+                        res.status(200).json("updated....");
+                    } else {
+                        res.status(404).send("User not found");
                     }
                 }
-            })
+            );
+        });
+    };
+
+    
+    if (updateData.password) {
         
-        }
-    })
-})
+        bcrypt.hash(updateData.password, 10, (err, hashedPassword) => {
+            if (err) {
+                return res.status(500).send("Error hashing password");
+            }
+            
+            updateData.password = hashedPassword;
+            
+            updateDocument(updateData);
+        });
+    } else {
+       
+        updateDocument(updateData);
+    }
+});
+
+module.exports = router;

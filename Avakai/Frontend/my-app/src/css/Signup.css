@@ -1,0 +1,86 @@
+
+.reg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #dddddd, #f0f0f0);
+    padding: 20px;
+    padding-top: 40px;
+  }
+  
+  
+  .reg-form {
+    background: linear-gradient(to bottom right, #767676af, #555);
+    border-radius: 10px;
+    padding: 20px 50px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px; 
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.394);
+  }
+  .reg-form p{
+    margin-top: 5px;
+  }
+  
+  .reg-form h1 {
+    font-family: "Baloo Tammudu 2", system-ui;
+    font-size: 2rem; 
+    margin-bottom: 0px;
+    color: #fefdfd;
+    text-shadow: 2px 2px 5px rgb(36, 36, 36);
+  }
+  
+  
+  .reg-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    font-family: "East Sea Dokdo", sans-serif;
+    font-size: 1.6rem; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.394);
+    transition: transform 0.3s;
+  }
+  
+  
+  .reg-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    font-family: "East Sea Dokdo", sans-serif;
+    font-size: 1.6rem; 
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.394);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .reg-form button:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    transform: scale(1.02);
+  }
+  
+  
+  @media (max-width: 575.98px) {
+    .reg-form {
+      padding: 15px; 
+    }
+    .reg-form h1 {
+      font-size: 1.8rem; 
+    }
+    .reg-form input,
+    .reg-form button {
+      font-size: 1.4rem; 
+    }
+  }
+  
