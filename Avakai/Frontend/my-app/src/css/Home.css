@@ -1,4 +1,8 @@
 
+html{
+  scroll-behavior: smooth;
+}
+
 .home {
   background: linear-gradient(to bottom right, #ffffff, #f0f0f0);
   min-height: 100vh;
@@ -11,11 +15,13 @@ section {
   padding: 40px 80px;
   position: relative;
 }
+
 .home1 {
-  
   display: flex;
   align-items: center;
+  padding-top: 50px;
 }
+
 .lefhom1 {
   display: flex;
   flex-wrap: wrap;
@@ -51,7 +57,7 @@ section {
   height: 200px;
   border: 2px solid rgb(135, 134, 134);
   border-radius: 10px;
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 
 .lefhom1 img:hover {
@@ -62,7 +68,6 @@ section {
   text-align: center;
   margin-bottom: 50px;
   position: relative;
-  
 }
 
 .tit1::before {
@@ -78,10 +83,10 @@ section {
 
 .tit1 h1 {
   font-family: "Baloo Tammudu 2", system-ui;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: black;
-  
+  line-height: 80px;
 }
 
 .tit1 p {
@@ -90,22 +95,28 @@ section {
   color: black;
 }
 
-
 .home2, .home3 {
-  background: linear-gradient(to bottom right, #767676af, #555);   color: #f1efef; 
-  border-radius: 5px;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.805);
-  margin: 20px 0;
+  background: linear-gradient(to bottom right, #000000af, #000000);   
+  color: #f1efef; 
+  border-radius: 20px;
+  box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.805);
+  margin: 20px 5px;
   padding: 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s;
 }
-.home3{
-  background: linear-gradient(to bottom right, #696868af, #555); 
 
+.home2 {
+  margin: 20px 30px;
+  margin-top: 40px;
 }
+
+.home3 {
+  background: linear-gradient(to bottom right, #000000af, #000000); 
+}
+
 .home2::before, .home3::before {
   content: '';
   position: absolute;
@@ -127,23 +138,28 @@ section {
   right: -20px;
   border-radius: 50%;
 }
-.home2 h2{
+
+.home2 p {
   text-shadow: 2px 2px 5px rgb(36, 36, 36);
-  font-size: 2rem;
-  font-family: "East Sea Dokdo", sans-serif;
+  font-size: 1.7rem;
+  font-family: "Dekko", cursive;
   color: #fefdfd;
-  font-weight: 200;
+  font-weight: 100;
+  word-spacing: 5px;
+  letter-spacing: 1px;
 }
+
 .home2 h1 {
   font-family: "Baloo Tammudu 2", system-ui;
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgb(36, 36, 36);
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgb(16, 16, 16);
 }
 
- .home3 p {
+.home3 p {
   font-family: "East Sea Dokdo", sans-serif;
   font-size: 2rem;
+  text-shadow: 2px 2px 5px rgb(36, 36, 36);
 }
 
 .homerecipes {
@@ -152,15 +168,10 @@ section {
   align-items: center;
   margin-top: 20px;
   margin-left: -50px;
-  
-  
 }
 
 .mySwiper {
   width: 100%;
-  transition: 0.3s;
-  
-  
   
 }
 
@@ -170,7 +181,7 @@ section {
   align-items: center;
   font-family: "East Sea Dokdo", sans-serif;
   font-size: 1.8rem;
-  background-color: #3d3c3c80; 
+  background-color: #7e7e7e80; 
   color: #fff; 
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.586);
   border-radius: 10px;
@@ -178,17 +189,13 @@ section {
   cursor: pointer;
   backdrop-filter: blur(8px);
   flex-shrink: 0;
-  
 }
 
 .swiper1 {
   overflow: hidden;
   height: 400px;
-  transition: 0.3s;
+  transition: transform 0.3s;
   padding-top: 10px;
-  
-  
-  
 }
 
 .swiper1 img:hover {
@@ -200,7 +207,7 @@ section {
   width: 90%;
   border-radius: 15px;
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.586);
-  transition: 0.3s;
+  transition: transform 0.3s;
 }
 
 .home3 h1 {
@@ -211,55 +218,44 @@ section {
   text-shadow: 2px 2px 5px rgb(36, 36, 36);
 }
 
-
-@media (min-width:375px)  and (max-width: 480px)  {
-  .home{
+@media (min-width: 375px) and (max-width: 480px) {
+  .home {
     margin-left: 20px;
-   }
+  }
 }
+
 @media (max-width: 768px) {
- 
   section {
     padding: 20px 40px;
   }
   .home1 {
-  
-    display: block
-   
+    display: block;
   }
   .lefhom1 img {
     width: 150px;
     height: 150px;
   }
-  .swiper1{
+  .swiper1 {
     height: 300px;
     padding-right: 150px;
   }
-  
   .homerecipes {
-    
     margin-left: 0px;
-    
-}
-
+  }
   .swiper1 img {
     height: 80%;
     width: 100%;
     border-radius: 15px;
     box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.586);
-    transition: 0.3s;
+    transition: transform 0.3s;
     margin-left: 40px;
   }
-
-  
 }
 
 @media (max-width: 992px) {
- 
   section {
     padding: 30px 60px;
   }
-
   .lefhom1 img {
     width: 180px;
     height: 180px;
@@ -267,11 +263,9 @@ section {
 }
 
 @media (min-width: 1200px) {
- 
   section {
     padding: 40px 80px;
   }
-
   .lefhom1 img {
     width: 220px;
     height: 200px;

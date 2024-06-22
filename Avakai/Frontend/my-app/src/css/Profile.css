@@ -1,0 +1,200 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+    overflow-x: hidden;
+    
+    
+  }
+  
+  .profile {
+    width: 100%;
+    position: relative;
+    padding-top: 100px;
+    height: 100vh;
+    
+  }
+  
+  .header {
+    background-color: #f5f3f3f7;
+    padding: 20px;
+    border: 1px solid #30303063;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.332);
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+  }
+  
+  
+  
+  .profheader h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #0d0d0e;
+    font-family: "Baloo Tammudu 2", system-ui;
+  }
+  
+  .profheader ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .profile-btn {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .profile-btn button{
+    padding: 10px 20px;
+    border: none;
+    background-color: #262626;
+    color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.575);
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+    font-family: "East Sea Dokdo", sans-serif;
+    border: 1px solid black;
+  }
+  
+  .profile-btn button:hover,
+  .profile-btn a:hover {
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    transform: scale(1.02);
+    color: #333;
+    
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .deletebox {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1001;
+    position: relative;
+   max-height: 100%;
+    width: 35%;
+    
+  }
+
+  
+  
+  .deletebox form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .deletebox label {
+    margin-bottom: 10px;
+    text-align: left;
+    margin-top: 30px;
+  }
+  
+  .deletebox input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+
+  }
+  
+  .deletebox button {
+    margin: 5px 0;
+    padding: 10px;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    
+    
+  }
+  
+  .deletebox button:hover {
+    background-color: #bd091b;
+  }
+  
+  .deletebox button[type="reset"] {
+    background-color: #0d0d0e;
+  }
+  
+  .deletebox button[type="reset"]:hover {
+    background-color: #ffffff;
+  }
+  
+  .deletebox .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  
+  .profile::before,
+  .profile::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(135, 134, 134, 0.2);
+    z-index: 0;
+  }
+  
+  .profile::before {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+  }
+  
+  .profile::after {
+    width: 200px;
+    height: 200px;
+    bottom: -50px;
+    right: -50px;
+  }
+  .pencil{
+    font-size: 1rem;
+    margin-left: 20px;
+  }
+  .pencil:hover{
+    font-size: 1.2rem;
+  }
+  .myrecipies{
+    padding-top: 30px;
+    padding-left: 25px;
+  }
+  .myrecipies h1{
+      margin-bottom: 20px;
+  }
+  

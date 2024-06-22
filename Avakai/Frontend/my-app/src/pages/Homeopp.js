@@ -1,10 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Home.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
+
 
 import pic1 from '../Assets/pic1.png';
 import pic2 from '../Assets/pic2.jpg';
@@ -13,11 +13,9 @@ import pic4 from '../Assets/pic4.jpg';
 import pic5 from '../Assets/pic5.jpg';
 import pic6 from '../Assets/pic6.jpg';
 import pic7 from '../Assets/pic7.jpg';
-import Loader from '../components/Loader';
 
 function Home() {
   const [slidesPerView, setSlidesPerView] = useState(3);
-  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
@@ -35,13 +33,8 @@ function Home() {
     window.addEventListener('resize', handleResize);
     handleResize();
 
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 4000); 
-
     return () => {
       window.removeEventListener('resize', handleResize);
-      clearTimeout(timer);
     };
   }, []);
 
@@ -52,10 +45,6 @@ function Home() {
       navigate('/login');
     }
   };
-
-  if (loading) {
-    return <Loader />;
-  }
 
   return (
     <div className="home">
@@ -83,6 +72,7 @@ function Home() {
             loop={true}
             speed={1500}
             centeredSlides={true}
+            
             className="mySwiper"
           >
             <SwiperSlide onClick={() => handleSlideClick('/tiffins')}>

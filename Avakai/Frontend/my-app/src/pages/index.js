@@ -8,3 +8,4 @@ export { default as Riceitems } from './Riceitems';
 export { default as Snacks } from './Snacks';
 export { default as Login } from './Login';
 export { default as Signup } from './Signup';
+export { default as Forgotpass } from './Forgotpass';

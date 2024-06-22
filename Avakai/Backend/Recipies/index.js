@@ -8,6 +8,7 @@ app.use('/fetch',require('./Routes/fetch'))
 app.use('/register',require('./Routes/register'))
 app.use('/fetchbyname',require('./Routes/fetchbyname'))
 app.use('/delete',require('./Routes/delete'))
+app.use('/update',require('./Routes/update'))
 
 app.listen(PORT,()=>{
     console.log(`server loading.... ${PORT}`)

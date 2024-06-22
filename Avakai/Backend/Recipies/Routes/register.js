@@ -4,16 +4,15 @@ const mongodb = require('mongodb').MongoClient
 
   module.exports = router.post('/',(req,res)=>{
     const  data = {
-        "id":parseInt(req.body.id),
-        "img":req.body.img,
-        "name": req.body.name,
-        "content": req.body.content,
-        "ingredients": req.body.ingredients,
-        "notes": req.body.notes,
-        "region": req.body.region,
-        "von": req.body.von,
-        "foodtype": req.body.foodtype,
-        "likes": req.body.likes
+        "title": req.body.title,
+        "imglink":req.body.imglink,
+        "process": req.body.process,
+        "ingridients": JSON.parse(req.body.ingredients),
+        "tips": req.body.tips,
+        "category": req.body.category,
+        "item": req.body.item,
+        "likes": [],
+        "email": req.body.email
     }
     mongodb.connect('mongodb://localhost:27017/avakai',(err,db)=>{
         if(err) throw err;

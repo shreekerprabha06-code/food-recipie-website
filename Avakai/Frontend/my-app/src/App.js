@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import { Home, Recipies, Donate, Profile, Tiffins, Login, Signup, Riceitems, Curries, Snacks } from './pages/index';
+import { Home, Recipies, Donate, Profile, Tiffins, Login, Signup, Riceitems, Curries, Snacks, Forgotpass } from './pages/index';
 import RecipeDetailPage from './components/Recipiepage';
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup/>} />
+          <Route path="/forgotpass" element={<Forgotpass/>} />
           <Route path="/tiffins" element={<Tiffins/>} /> 
           <Route path="/riceitems" element={<Riceitems/>} /> 
           <Route path="/curries" element={<Curries/>} /> 

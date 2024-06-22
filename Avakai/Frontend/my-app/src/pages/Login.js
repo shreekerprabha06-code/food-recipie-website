@@ -23,7 +23,8 @@ function Login() {
                 setError('');
                 localStorage.setItem('email', email)
                 localStorage.setItem('isLoggedIn', 'true');
-                navigate('/');
+               navigate('/recipies');
+               window.location.reload();
             } else {
                 setError('Invalid credentials. Please try again.');
             }
@@ -50,11 +51,12 @@ function Login() {
                         required
                         ref={pwdRef}
                     />
-                    <br /><br />
+                    
+                    <br /><p className='signuplink' style={{paddingTop: "10px"}}>For "<NavLink to='/forgotpass'>forgot password</NavLink>"ers</p><br />
                     {error && <p style={{ color: 'red' }}>{error}</p>}
                     <button type='submit'>Login</button>
                 </form>
-                <p className='signuplink'>If you're a new user <NavLink to='/signup'>signup</NavLink> here</p><br />
+                <p className='signuplink' style={{paddingTop: "10px"}}>If you're a new user <NavLink to='/signup'>signup</NavLink> here</p><br />
             </div>
         </div>
     );

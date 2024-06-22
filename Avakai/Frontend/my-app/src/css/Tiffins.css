@@ -1,6 +1,7 @@
 .container {
     padding-top: 90px;
     text-align: center;
+    margin-bottom: 70px;
   }
   .container h1{
     font-family: "Baloo Tammudu 2", system-ui;
@@ -60,11 +61,19 @@
   
   .icon {
     font-size: 1.5rem;
-    color: #fcfcfc;
+    color: #0a0a0a;
     cursor: pointer;
   }
   
   .icon:hover {
     color: #ff9900;
+  }
+  
+  #deletebtn{
+    background-color: #bd091b;
+    transition: 0.3s;
+  }
+  #deletebtn:hover{
+    background-color: #5b040c
   }
   
