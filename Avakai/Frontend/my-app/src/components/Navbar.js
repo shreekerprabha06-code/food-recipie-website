@@ -85,7 +85,7 @@ function Navbar() {
                           <NavLink to="/profile">
                             <li>Edit Profile</li>
                           </NavLink>
-                          <li onClick={handleLogout}>Log Out</li>
+                          <li onClick={handleLogout} style={{cursor: "pointer"}}>Log Out</li>
                         </ul>
                       </div>
                       

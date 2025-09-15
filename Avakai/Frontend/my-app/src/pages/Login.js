@@ -23,7 +23,7 @@ function Login() {
                 setError('');
                 localStorage.setItem('email', email)
                 localStorage.setItem('isLoggedIn', 'true');
-               navigate('/recipies');
+               navigate('/');
                window.location.reload();
             } else {
                 setError('Invalid credentials. Please try again.');
