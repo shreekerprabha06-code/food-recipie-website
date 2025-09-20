@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongodb = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectId;
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/';
 const dbName = 'avakai';
 
 
