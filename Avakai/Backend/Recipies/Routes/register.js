@@ -14,7 +14,7 @@ const mongodb = require('mongodb').MongoClient
         "likes": [],
         "email": req.body.email
     }
-    mongodb.connect('mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/',(err,db)=>{
+    mongodb.connect('mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/Avakai',(err,db)=>{
         if(err) throw err;
         else{
             db.collection('recipies').insertOne(data,(err,result)=>{
