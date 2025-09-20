@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
 
     try {
         
-        const client = await MongoClient.connect('mongodb://localhost:27017/avakai');
+        const client = await MongoClient.connect('mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/Avakai');
         const db = client.db('avakai');
 
     
