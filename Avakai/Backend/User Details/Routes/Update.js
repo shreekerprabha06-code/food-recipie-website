@@ -11,7 +11,7 @@ router.put('/', (req, res) => {
     delete updateData.email;
 
     const updateDocument = (data) => {
-        MongoClient.connect('mongodb://localhost:27017/avakai', (err, client) => {
+        MongoClient.connect('mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/Avakai', (err, client) => {
             if (err) {
                 return res.status(500).send("Error connecting to database");
             }
