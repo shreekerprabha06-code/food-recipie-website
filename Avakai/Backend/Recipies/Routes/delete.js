@@ -5,7 +5,7 @@ const mongodb = require('mongodb').MongoClient
 
     module.exports = router.delete('/',(req,res)=>{
         const title = req.body.title
-        mongodb.connect('mongodb://localhost:27017/avakai',(err,db)=>{
+        mongodb.connect('mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/',(err,db)=>{
             if(err) throw err;
             else{
              db.collection('recipies').deleteOne({title:title},(err,record)=>{
