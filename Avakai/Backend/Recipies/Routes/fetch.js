@@ -7,7 +7,7 @@ const mongodb = require('mongodb').MongoClient
         mongodb.connect('mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/Avakai',(err,db)=>{
             if(err) throw err;
             else{
-             db.collection('Recipies').find().toArray((err,data)=>{
+             db.collection('recipies').find().toArray((err,data)=>{
                 if(err){
                     console.error("While fetching data from Collection ",err);
                 }else{
