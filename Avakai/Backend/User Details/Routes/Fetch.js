@@ -4,7 +4,7 @@ const mongodb = require('mongodb').MongoClient
 
 
     module.exports = router.get('/',(req,res)=>{
-        mongodb.connect('mongodb://localhost:27017/avakai',(err,db)=>{
+        mongodb.connect('mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/Avakai',(err,db)=>{
             if(err) throw err;
             else{
              db.collection('userdetails').find().toArray((err,data)=>{
