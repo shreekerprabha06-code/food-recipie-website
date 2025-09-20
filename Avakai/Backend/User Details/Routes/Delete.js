@@ -1,24 +1,30 @@
-const express = require('express')
-const router = express.Router()
-const mongodb = require('mongodb').MongoClient
+const express = require('express');
+const router = express.Router();
+const { MongoClient } = require('mongodb');
 
+const uri = "mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/Avakai?retryWrites=true&w=majority";
 
-    module.exports = router.delete('/',(req,res)=>{
-        const email = req.body.email
-        mongodb.connect('mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/Avakai',(err,db)=>{
-            if(err) throw err;
-            else{
-             db.collection('userdetails').deleteOne({email:email},(err,record)=>{
-                if(err) throw err;
-                else{
-                    if(record.deletedCount>0){
-                        res.status(200).json("deleted...."+email)
-                    }else{
-                        res.status(404).send("User not found")
-                    }
-                }
-             })
-            }     
-        })
-        
-    })
+router.delete('/', async (req, res) => {
+    const { email } = req.body;
+    let client;
+
+    try {
+        client = await MongoClient.connect(uri);
+        const db = client.db('Avakai');
+
+        const record = await db.collection('userdetails').deleteOne({ email });
+
+        if (record.deletedCount > 0) {
+            res.status(200).json(`Deleted: ${email}`);
+        } else {
+            res.status(404).send("User not found");
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error deleting user");
+    } finally {
+        if (client) client.close();
+    }
+});
+
+module.exports = router;

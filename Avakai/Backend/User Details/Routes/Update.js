@@ -3,55 +3,35 @@ const router = express.Router();
 const { MongoClient } = require('mongodb');
 const bcrypt = require('bcryptjs');
 
-router.put('/', (req, res) => {
-    const email = req.body.email;
-    const updateData = req.body; 
+const uri = "mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/Avakai?retryWrites=true&w=majority";
 
-   
-    delete updateData.email;
+router.put('/', async (req, res) => {
+    const { email, password, ...updateData } = req.body;
+    let client;
 
-    const updateDocument = (data) => {
-        MongoClient.connect('mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/Avakai', (err, client) => {
-            if (err) {
-                return res.status(500).send("Error connecting to database");
-            }
+    try {
+        client = await MongoClient.connect(uri);
+        const db = client.db('Avakai');
 
-            const db = client.db('avakai'); 
+        if (password) {
+            updateData.password = await bcrypt.hash(password, 10);
+        }
 
-            
-            db.collection('userdetails').updateOne(
-                { email: email },
-                { $set: data },
-                (err, record) => {
-                    client.close(); 
-                    if (err) {
-                        return res.status(500).send("Error updating data");
-                    }
-                    if (record.modifiedCount > 0) {
-                        res.status(200).json("updated....");
-                    } else {
-                        res.status(404).send("User not found");
-                    }
-                }
-            );
-        });
-    };
+        const record = await db.collection('userdetails').updateOne(
+            { email },
+            { $set: updateData }
+        );
 
-    
-    if (updateData.password) {
-        
-        bcrypt.hash(updateData.password, 10, (err, hashedPassword) => {
-            if (err) {
-                return res.status(500).send("Error hashing password");
-            }
-            
-            updateData.password = hashedPassword;
-            
-            updateDocument(updateData);
-        });
-    } else {
-       
-        updateDocument(updateData);
+        if (record.modifiedCount > 0) {
+            res.status(200).json("Updated successfully");
+        } else {
+            res.status(404).send("User not found");
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error updating user");
+    } finally {
+        if (client) client.close();
     }
 });
 
