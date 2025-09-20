@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 module.exports = router.post('/', (req, res) => {
     const { email, password, login } = req.body;
 
-    mongodb.connect('mongodb://localhost:27017/avakai', async (err, db) => {
+    mongodb.connect('mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/Avakai', async (err, db) => {
         if (err) {
             console.error('Error connecting to database:', err);
             return res.status(500).json({ message: 'An error occurred while connecting to the database' });
