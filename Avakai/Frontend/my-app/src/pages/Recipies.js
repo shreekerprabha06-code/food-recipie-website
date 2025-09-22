@@ -9,9 +9,9 @@ import Swiper2 from '../components/Swiper2';
 
 import { FaStar } from 'react-icons/fa';
 import axios from 'axios';
-const fetchUrl = 'http://localhost:2000/fetch'; 
-const likeUrl = 'http://localhost:2000/update/like'; 
-const unlikeUrl = 'http://localhost:2000/update/unlike';
+const fetchUrl = 'https://food-recipie-website.onrender.com/fetch'; 
+const likeUrl = 'https://food-recipie-website.onrender.com/update/like'; 
+const unlikeUrl = 'https://food-recipie-website.onrender.com/update/unlike';
 
 export function Recipies() {
   const [posts, setPosts] = useState([]);
@@ -31,7 +31,7 @@ export function Recipies() {
       })
       .catch(err => console.log('Error fetching posts:', err)); 
 
-    axios.get('http://localhost:5000/fetch')
+    axios.get('https://food-recipie-website-users.onrender.com/fetch')
       .then(res => {
         console.log('Users fetched:', res.data); 
         setUsers(res.data);
