@@ -9,8 +9,8 @@ import { IoClose } from 'react-icons/io5';
 import '../css/Tiffins.css';
 import { NavLink } from 'react-router-dom';
 
-const url = 'http://localhost:2000/fetch';
-const delurl = 'http://localhost:2000/delete';
+const url = 'https://food-recipie-website.onrender.com/fetch';
+const delurl = 'https://food-recipie-website.onrender.com/delete';
 
 export default function App() {
     const [slidesPerView, setSlidesPerView] = useState(5);
