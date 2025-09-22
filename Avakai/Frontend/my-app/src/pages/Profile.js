@@ -7,9 +7,9 @@ import { IoClose } from "react-icons/io5";
 import { FaPencilAlt } from "react-icons/fa";
 import Swiper1 from '../components/Swiper1';
 
-const url = 'http://localhost:5000/fetch';
-const delurl = 'http://localhost:5000/delete';
-const regurl = 'http://localhost:2000/register';
+const url = 'https://food-recipie-website-users.onrender.com/fetch';
+const delurl = 'https://food-recipie-website-users.onrender.com/delete';
+const regurl = 'https://food-recipie-website.onrender.com/register';
 
 function Profile() {
   const [posts, setPosts] = useState([]);
@@ -56,7 +56,7 @@ function Profile() {
   const handleUpdate = (e) => {
     e.preventDefault();
     const userEmail = localStorage.getItem('email');
-    axios.put('http://localhost:5000/update', { email: userEmail, name })
+    axios.put('https://food-recipie-website-users.onrender.com/update', { email: userEmail, name })
       .then(res => {
         console.log(res.data);
         setPosts(posts.map(user => user.email === userEmail ? { ...user, name } : user));
@@ -76,7 +76,7 @@ function Profile() {
       return;
     }
     const userEmail = localStorage.getItem('email');
-    axios.put('http://localhost:5000/update', { email: userEmail, password })
+    axios.put('https://food-recipie-website-users.onrender.com/update', { email: userEmail, password })
       .then(res => {
         console.log(res.data);
         setPosts(posts.map(user => user.email === userEmail ? { ...user, password } : user));
