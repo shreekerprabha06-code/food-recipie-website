@@ -1,24 +1,28 @@
-const express = require('express')
-const router = express.Router()
-const mongodb = require('mongodb').MongoClient
+const express = require('express');
+const router = express.Router();
+const { MongoClient } = require('mongodb');
 
+const url = 'mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/';
+const dbName = 'Avakai';
 
-    module.exports = router.get('/',(req,res)=>{
-        mongodb.connect('mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/Avakai',(err,db)=>{
-            if(err) throw err;
-            else{
-             db.collection('recipies').find().toArray((err,data)=>{
-                if(err){
-                    console.error("While fetching data from Collection ",err);
-                }else{
-                    if(data.length > 0){
-                        res.status(200).json(data);
-                    }else{
-                        res.status(404).send("User not found");
-                    }
-                }
-             })
-            }     
-        })
-        
-    })
+router.get('/', async (req, res) => {
+  try {
+    const client = await MongoClient.connect(url);
+    const db = client.db(dbName);
+
+    const data = await db.collection('recipies').find().toArray();
+
+    client.close();
+
+    if (data.length > 0) {
+      res.status(200).json(data);
+    } else {
+      res.status(404).send("No recipes found");
+    }
+  } catch (err) {
+    console.error("Error fetching recipes:", err);
+    res.status(500).send("Error fetching recipes");
+  }
+});
+
+module.exports = router;

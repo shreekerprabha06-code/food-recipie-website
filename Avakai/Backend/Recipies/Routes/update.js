@@ -1,62 +1,50 @@
 const express = require('express');
 const router = express.Router();
-const mongodb = require('mongodb').MongoClient;
-const ObjectId = require('mongodb').ObjectId;
+const { MongoClient } = require('mongodb');
+
 const url = 'mongodb+srv://shreeker027:ihJ2UQg4Rr4WTG4X@cluster0.qtmxkjb.mongodb.net/';
 const dbName = 'Avakai';
 
-
-router.put('/like', (req, res) => {
+router.put('/like', async (req, res) => {
   const { title, userEmail } = req.body;
 
-  mongodb.connect(url, (err, client) => {
-    if (err) {
-      console.error('Error connecting to MongoDB:', err);
-      return res.status(500).send("Error connecting to database");
-    }
-
+  try {
+    const client = await MongoClient.connect(url);
     const db = client.db(dbName);
-    db.collection('recipies').findOneAndUpdate(
-      { title, likes: { $nin: [userEmail] } }, 
-      { $push: { likes: userEmail } }, 
-      { returnOriginal: false },
-      (err, result) => {
-        client.close();
-        if (err) {
-          console.error('Error liking recipe:', err);
-          return res.status(500).send("Error liking recipe");
-        }
-        res.status(200).json(result.value); 
-      }
+
+    const result = await db.collection('recipies').findOneAndUpdate(
+      { title, likes: { $nin: [userEmail] } },
+      { $push: { likes: userEmail } },
+      { returnDocument: "after" }
     );
-  });
+
+    client.close();
+    res.status(200).json(result.value);
+  } catch (err) {
+    console.error("Error liking recipe:", err);
+    res.status(500).send("Error liking recipe");
+  }
 });
 
-
-router.put('/unlike', (req, res) => {
+router.put('/unlike', async (req, res) => {
   const { title, userEmail } = req.body;
 
-  mongodb.connect(url, (err, client) => {
-    if (err) {
-      console.error('Error connecting to MongoDB:', err);
-      return res.status(500).send("Error connecting to database");
-    }
-
+  try {
+    const client = await MongoClient.connect(url);
     const db = client.db(dbName);
-    db.collection('recipies').findOneAndUpdate(
-      { title, likes: { $in: [userEmail] } }, 
-      { $pull: { likes: userEmail } }, 
-      { returnOriginal: false },
-      (err, result) => {
-        client.close();
-        if (err) {
-          console.error('Error unliking recipe:', err);
-          return res.status(500).send("Error unliking recipe");
-        }
-        res.status(200).json(result.value); 
-      }
+
+    const result = await db.collection('recipies').findOneAndUpdate(
+      { title, likes: { $in: [userEmail] } },
+      { $pull: { likes: userEmail } },
+      { returnDocument: "after" }
     );
-  });
+
+    client.close();
+    res.status(200).json(result.value);
+  } catch (err) {
+    console.error("Error unliking recipe:", err);
+    res.status(500).send("Error unliking recipe");
+  }
 });
 
 module.exports = router;
