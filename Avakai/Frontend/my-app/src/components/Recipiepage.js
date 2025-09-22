@@ -11,7 +11,7 @@ const RecipeDetailPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:2000/fetchbyname/${title}`);
+        const response = await axios.get(`https://food-recipie-website.onrender.com/fetchbyname/${title}`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
