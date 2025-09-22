@@ -8,9 +8,9 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-const fetchUrl = 'http://localhost:2000/fetch'; 
-const likeUrl = 'http://localhost:2000/update/like'; 
-const unlikeUrl = 'http://localhost:2000/update/unlike'; 
+const fetchUrl = 'https://food-recipie-website.onrender.com/fetch'; 
+const likeUrl = 'https://food-recipie-website.onrender.com/update/like'; 
+const unlikeUrl = 'https://food-recipie-website.onrender.com/update/unlike'; 
 
 function RecipeCard() {
   const [posts, setPosts] = useState([]);
