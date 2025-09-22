@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-const url = 'http://localhost:5000/fetch';
+const url = 'https://food-recipie-website-users.onrender.com/fetch';
 
 function Navbar() {
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
