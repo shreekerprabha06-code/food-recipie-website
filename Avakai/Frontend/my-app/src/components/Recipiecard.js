@@ -27,7 +27,7 @@ function RecipeCard({ itemtype }) {
       })
       .catch(err => console.log('Error fetching posts:', err)); 
 
-    axios.get('https://food-recipie-website.onrender.com/fetch')
+    axios.get('https://food-recipie-website-users.onrender.com/fetch')
       .then(res => {
         console.log('Users fetched:', res.data); 
         setUsers(res.data);
