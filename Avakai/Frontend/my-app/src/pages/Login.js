@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Login.css';
 
-const loginUrl = 'http://localhost:5000/api';
+const loginUrl = 'https://food-recipie-website-users.onrender.com/api';
 
 function Login() {
     const emailRef = useRef(null);
