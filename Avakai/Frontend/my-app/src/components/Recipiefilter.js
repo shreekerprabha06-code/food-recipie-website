@@ -9,7 +9,7 @@ const Recipefilter = ({ itemtype }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:2000/fetch');
+        const response = await axios.get('https://food-recipie-website.onrender.com/fetch');
         const filteredData = response.data.filter(item => item.itemtype === itemtype);
         setData(filteredData);
       } catch (error) {
