@@ -3,8 +3,8 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Signup.css';
 
-const url = 'http://localhost:5000/register';
-const getUsersUrl = 'http://localhost:5000/fetch';
+const url = 'https://food-recipie-website-users.onrender.com/register';
+const getUsersUrl = 'https://food-recipie-website-users.onrender.com/fetch';
 
 function Signup() {
   const [name, setName] = useState('');
