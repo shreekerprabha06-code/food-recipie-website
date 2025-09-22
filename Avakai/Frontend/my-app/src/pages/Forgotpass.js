@@ -16,7 +16,7 @@ const ForgotPass = () => {
       return;
     }
 
-    axios.put('http://localhost:5000/update', { email, password })
+    axios.put('https://food-recipie-website-users.onrender.com/update', { email, password })
       .then(res => {
         console.log(res.data);
         navigate('/');
